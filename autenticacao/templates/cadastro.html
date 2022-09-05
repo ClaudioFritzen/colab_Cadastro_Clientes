@@ -14,7 +14,7 @@
     <div class="box">
         <form>
             <fieldset>
-                <legend><b>Formulário de clientes</b></legend>
+                <legend><b>Cadastro de usuario</b></legend>
                 <br>
                 <div class="inputbox">
                     <input type="text" name="nome" id="nome" class="userInput" required>
@@ -27,19 +27,22 @@
                     <br>
                 </div>
                 <br>
-                <div class="inputbox">
+              <!--   <div class="inputbox">
                     <input type="tel" name="celular" id="Celular" class="userInput" required>
                     <label for="celular">Celular</label>
+                </div> -->
+                <div class="pass">
+                    <label for="senha"> Crie sua senha</label>
+                    <input id="senha" type="password" placeholder="Digite sua senha" />
                 </div>
+                
                 <br>
-                <div>
-                    <label for="genero">Sexo:</label>
-                    <select id="genero" name="genero">
-                        <option value="feminino">Feminino</option>
-                        <option value="masculino">Masculino</option>
-                        <option value="outro">Outro</option>
-                    </select>
+                <div class="pass">
+                    <label for="password">Confirme sua senha</label>
+                    <input type="password" id="password" name="senha" size="20" required>
+
                 </div>
+              
                 <br>
                 <div class="inputbox">
                     <label for="data_nascimento">Data de Nascimento</label>
