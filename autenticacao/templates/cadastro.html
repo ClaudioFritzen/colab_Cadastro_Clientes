@@ -1,5 +1,10 @@
 {% extends 'base.html' %}
 
+{% load static %}
+{% block 'head' %}
+    <link rel="stylesheet" href= " {% static 'autenticacao/css/cadastro.css' %}">
+{% endblock 'head' %}
+
 {% block 'titulo' %}
 Tela | Cadastro
 {% endblock 'titulo' %}
@@ -40,8 +45,10 @@ Tela | Cadastro
                 <input type="submit" value="Enviar" id="submit">
             </fieldset>
         </form>
-        {% comment %} 
-        {% block 'footer' %} {% endblock 'footer' %} {% endcomment %}
+         
+        {% block 'footer' %}
+
+         {% endblock 'footer' %}
     </div>
 {% endblock 'body' %}
 </html>

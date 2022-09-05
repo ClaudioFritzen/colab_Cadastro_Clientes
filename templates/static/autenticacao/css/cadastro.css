@@ -1,0 +1,69 @@
+/*---formulario---*/
+body {
+    font-family: 'Work Sans', sans-serif;
+    background-image: linear-gradient(to right, rgb(175, 163, 163), rgb(187, 110, 110));
+    font-size: 20px;
+
+}
+
+.box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(85, 75, 88);
+    text-align: center;
+    padding: 20px;
+    border-radius: 20px;
+    width: 30%;
+    height: auto;
+    box-shadow: 20px 20px 30px rgb(36, 34, 34);
+    color: rgb(243, 233, 211);
+}
+
+fieldset {
+    border: 5px double rgb(180, 167, 167);
+    border-radius: 10px;
+}
+
+legend {
+    border: 5px double rgb(233, 188, 188);
+    padding: 10px;
+    background-color: rgb(184, 164, 194);
+    border-radius: 5px;
+}
+
+/*Dados pessoais*/
+.inputbox {
+    position: relative;
+    text-align: left;
+}
+
+.userInput {
+    text-align: center;
+    border-radius: 5px;
+    width: 100%;
+    letter-spacing: 1px;
+}
+.pass{
+    
+    padding: 10px;
+   
+    
+}
+/*Botão de enviar*/
+#submit {
+    background-image: linear-gradient(to left, rgb(175, 163, 163), rgb(187, 110, 110));
+    width: 100%;
+    border: none;
+    padding: 2vh;
+    color: rgb(247, 244, 239);
+    font-size: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#submit:hover {
+    background-image: linear-gradient(to right, rgb(175, 163, 163), rgb(104, 95, 95));
+}
+
