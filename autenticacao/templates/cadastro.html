@@ -10,8 +10,9 @@ Tela | Cadastro
 {% endblock 'titulo' %}
 
 {% block 'body' %}
+<body>
     <div class="box">
-        <form>
+        <form action= "{% url 'cadastro' %}" method ="GET">
             <h1> Welcome! </h1>
             <fieldset>
                 
@@ -45,7 +46,7 @@ Tela | Cadastro
                 <input type="submit" value="Enviar" id="submit">
             </fieldset>
         </form>
-         
+</body>       
         {% block 'footer' %}
 
          {% endblock 'footer' %}
