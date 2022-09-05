@@ -5,11 +5,11 @@ Tela | Cadastro
 {% endblock 'titulo' %}
 
 {% block 'body' %}
-<body>
     <div class="box">
         <form>
+            <h1> Welcome! </h1>
             <fieldset>
-                <h1> Welcome! </h1>
+                
                 <legend><b>Cadastro de usuario</b></legend>
                 <br>
                 <div class="inputbox">
@@ -23,10 +23,6 @@ Tela | Cadastro
                     <br>
                 </div>
                 <br>
-              <!--   <div class="inputbox">
-                    <input type="tel" name="celular" id="Celular" class="userInput" required>
-                    <label for="celular">Celular</label>
-                </div> -->
                 <div class="pass">
                     <label for="senha"> Crie sua senha</label>
                     <input id="senha" type="password" placeholder="Digite sua senha" />
@@ -40,18 +36,12 @@ Tela | Cadastro
                 </div>
               
                 <br>
-                <div class="inputbox">
-                    <label for="data_nascimento">Data de Nascimento</label>
-                    <input type="date" name="data_nascimento" id="data_nascimento" class="userInput" required>
-                </div>
-                <br>
+                
                 <input type="submit" value="Enviar" id="submit">
             </fieldset>
         </form>
-        <footer>
-            
-        </footer>
+        {% comment %} 
+        {% block 'footer' %} {% endblock 'footer' %} {% endcomment %}
     </div>
-</body>
 {% endblock 'body' %}
 </html>
