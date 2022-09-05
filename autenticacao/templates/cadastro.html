@@ -12,7 +12,8 @@ Tela | Cadastro
 {% block 'body' %}
 <body>
     <div class="box">
-        <form action= "{% url 'cadastro' %}" method ="GET">
+        <form action= "{% url 'cadastro' %}" method ="POST">
+            {% csrf_token %}
             <h1> Welcome! </h1>
             <fieldset>
                 
@@ -44,6 +45,7 @@ Tela | Cadastro
                 <br>
                 
                 <input type="submit" value="Enviar" id="submit">
+                
             </fieldset>
         </form>
 </body>       
