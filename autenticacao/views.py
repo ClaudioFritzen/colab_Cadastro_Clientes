@@ -10,7 +10,13 @@ def cadastro(request):
     if request.method == "GET":
         return render(request, 'cadastro.html')
     elif request.method == "POST":
-        return HttpResponse("Testando")
+        usuario = request.POST.get('nome')
+        email = request.POST.get('email')
+        senha = request.POST.get('senha')
+        confirmar_senha = request.POST.get('password')
+        return HttpResponse(f'Cadastro realizado com sucesso!!!!'
+            'Olá seja bem vindo(a) {usuario}. Seu email é {email} {senha} {confirmar_senha}')
+            
         
 def login(request):
     return HttpResponse("Você esta em login")
