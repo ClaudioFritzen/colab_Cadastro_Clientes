@@ -22,6 +22,7 @@ def cadastro(request):
         try:
             user = User.objects.create_user(username=usuario, password=senha, is_active=False)
             user.save()
+            
            
             return redirect('login')
         except:
