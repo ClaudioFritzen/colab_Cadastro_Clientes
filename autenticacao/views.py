@@ -23,13 +23,13 @@ def cadastro(request):
             user = User.objects.create_user(username=usuario, password=senha, is_active=False)
             user.save()
            
-            return HttpResponse('Cadastro criado com sucesso')
+            return redirect('login')
         except:
-            return HttpResponse('Falha ao criar usuario')
+            return HttpResponse('')
         
 
 
-        return HttpResponse(f'Cadastro realizado com sucesso!!!! Olá seja bem vindo(a) {usuario}.')
+        
 
         
 def login(request):
