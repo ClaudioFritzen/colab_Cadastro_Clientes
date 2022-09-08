@@ -2,26 +2,26 @@ import re
 from django.contrib import messages
 from django.contrib.messages import constants
 
-def password_is_valid(request, senha, confirmar_senha):
-    if len(senha) < 6:
+def password_is_valid (request, password, confirm_password):
+    if len(password) < 6:
         messages.add_message(request, constants.ERROR, 'Sua senha deve ter no minimo seis digitos')
         return False
     
-    if not senha == confirmar_senha:
+    if not password == confirm_password:
         messages.add_message(request, constants.ERROR, 'As senhas não são iguais')
     
     # validações de caracteres
 
-    if not re.search('[A-Z]', senha):
+    if not re.search('[A-Z]', password):
         messages.add_message(request, constants.ERROR, 'Está faltando uma letra Maiuscula')
         return False
     
-    if not re.search('[a-z]', senha):
+    if not re.search('[a-z]', password):
         messages.add_message(request, constants.ERROR, 'sua senha tem que ter uma letra minuscula')
         return False
     
-    if not re.search('[1-9]', senha):
+    if not re.search('[1-9]', password):
         messages.add_message(request, constants.ERROR, 'Senha deve conter um número')
         return False
-        
+
     return True
