@@ -12,6 +12,14 @@ Tela | Cadastro
 {% block 'body' %}
 <body>
     <div class="box">
+        {% if messages %}
+            <br>
+            {% for message in messages %}
+                <div class = "alert {{message.tags}}">
+                    {{message}}
+                </div>
+            {% endfor %}
+        {% endif %}
         <form action="{% url 'cadastro' %}" method="POST">
             {% csrf_token %}
             <h1> Welcome! </h1>

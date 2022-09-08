@@ -3,6 +3,9 @@ from django. http import HttpResponse
 from .utils import password_is_valid
 from django.contrib.auth.models import User 
 
+from django.contrib.messages import constants
+from django.contrib import messages
+
 # Create your views here.
 def home(request):
     return redirect( 'cadastro.html')
@@ -22,10 +25,10 @@ def cadastro(request):
         try:
             user = User.objects.create_user(username=usuario, password=senha, is_active=False)
             user.save()
-            
-           
+            messages.add_message(request, constants.SUCCESS, 'Usuário Cadastrado com sucesso' )
             return redirect('login')
         except:
+            messages.add_message(request, constants.ERRO, 'Erro interno do sistema' )
             return HttpResponse('')
         
 
