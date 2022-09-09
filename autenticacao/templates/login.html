@@ -1,3 +1,5 @@
+
+{% load static %}
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -6,8 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="templates/static/autencicacao/login.css">
-
+    <link rel="stylesheet" type="text/css" href="{% static 'autenticacao/css/style.css' %}">
 
     <title>Login</title>
 </head>
@@ -33,28 +34,27 @@
 
         </fieldset>
     </form>
-    
+
     <footer>
         <h4>Duanne Silva</h4>
         <section>
             <div class="logo">
-                <p><a href="https://github.com/DuanneSilva"><img class="icon1" src="static/autenticacao/img/logo-github.png"
-                            alt="icone github" width=50px></a></p>
+                <p><a href="https://github.com/DuanneSilva"  ><img class="icon1" src="{% static 'autenticacao/img/logo-github.png' %}"
+                            alt="icone github" width=50px target:"_blank"></a></p>
                 <p><a href="https://www.linkedin.com/in/duanne-silva-94a3b158/"><img class="icon2"
-                            src="image/linkedin.png" alt="icone github" width=50px></a></p>
+                            src="{% static 'autenticacao/img/linkedin.png' %}" alt="icone github" width=50px></a></p>
             </div>
         </section>
         <h4>Claudio Fritzen</h4>
         <section>
             <div class="logo2">
-                <p><a href="https://github.com/ClaudioFritzen"><img class="icon3" src="image/logo-github.png"
+                <p><a href="https://github.com/ClaudioFritzen"><img class="icon3" src="{% static 'autenticacao/img/logo-github.png' %}"
                             alt="icone github" width=50px></a></p>
-                <p><a href="https://www.linkedin.com/in/claudiofritzen/"><img class="icon4" src="image/linkedin.png"
+                <p><a href="https://www.linkedin.com/in/claudiofritzen/"><img class="icon4" src="{% static 'autenticacao/img/linkedin.png' %}"
                             alt="icone github" width=50px></a></p>
             </div>
         </section>
         </div>
     </footer>
+  
 </body>
-
-</html>
