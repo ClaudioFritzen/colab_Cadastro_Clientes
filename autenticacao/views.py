@@ -8,7 +8,7 @@ from django.contrib import messages
 
 # Create your views here.
 def home(request):
-    return redirect( 'cadastro.html')
+    return redirect('cadastro.html')
 
 def cadastro(request):
     if request.method == "GET":
@@ -26,7 +26,7 @@ def cadastro(request):
             user = User.objects.create_user(username=usuario, password=senha, is_active=False)
             user.save()
             messages.add_message(request, constants.SUCCESS, 'Usuário Cadastrado com sucesso' )
-            return redirect('login')
+            return redirect('login/')
         except:
             messages.add_message(request, constants.ERRO, 'Erro interno do sistema' )
             return HttpResponse('')
@@ -37,4 +37,4 @@ def cadastro(request):
 
         
 def login(request):
-    return HttpResponse("Você esta em login")
+    return render(request, 'login.html')
