@@ -1,29 +1,28 @@
-
+{% extends 'base.html' %}
 {% load static %}
 
 {% block 'head' %}
-<link rel="stylesheet" type="text/css" href="{% static 'autenticacao/css/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'autenticacao/css/style.css' %}">
 {% endblock 'head' %}
-
-
 
 {% block 'titulo' %} 
     Tela | Login 
 {% endblock 'titulo' %}
 
-
+{% block 'body' %}
 <body id="login-home">
-    <form>
+    <form action=" {% url 'login' %} " method="POST"> 
+        {% csrf_token %}
         <fieldset>
-            <legend>Login do Usuário</legend>
+            <legend> Login do Usuário </legend>
             <div class="login-input">
-                <input id="usuário" type="text" placeholder="Nome Completo">
-                <label for="usuário">Usuário</label>
+                <input id="usuario" type="text" placeholder="Nome Completo">
+                <label for="usuario">Usuário</label>
             </div>
 
             <div class="login-input">
-                <input id="senha" type="password" placeholder="*******">
-                <label for="password">Senha</label>
+                <input for="senha" id="senha" type="password" placeholder="*******">
+                <label id="senha">Senha</label>
             </div>
 
             <input class="enter" type="submit" value="Enviar" id="submit">
@@ -33,7 +32,7 @@
 
         </fieldset>
     </form>
-
+{% comment %} 
     <footer>
         <h4>Duanne Silva</h4>
         <section>
@@ -54,6 +53,6 @@
             </div>
         </section>
         </div>
-    </footer>
-  
+    </footer> {% endcomment %}
+{% endblock 'body' %}
 </body>
