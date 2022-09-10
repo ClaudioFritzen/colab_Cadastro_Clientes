@@ -4,7 +4,8 @@ from .utils import password_is_valid
 from django.contrib.auth.models import User
 
 from django.contrib.messages import constants
-from django.contrib import messages, auth
+from django.contrib import messages
+from django.contrib import auth
 
 # Create your views here.
 def home(request):
@@ -34,19 +35,20 @@ def cadastro(request):
 
 
 # Autencicacao de usuario do login
-from django.contrib import auth
+
 def login(request):
-    if request.method == 'GET':
+    if request.method =="GET":
         return render (request, 'login.html')
-    elif request.method == 'POST':
-        username = request.POST.get('username')
-        senha = request.POST.get('password')
+    elif request.method =="POST":
+        username = request.POST.get('usuario')
+        senha = request.POST.get('senha')
          
-        usuario = auth.authenticate(username=usuario, password=senha)
+        usuario = auth.authenticate(username=username, password=senha)
 
         if not usuario:
-            messages.add_message(request, constants.ERROR, 'Username')
+            messages.add_message(request, constants.ERRO, 'username')
             return redirect ('/login')
         else:
             auth.login(request, usuario)
-            return redirect('/')
+            return HttpResponse('Login bem sucedido!')
+            """ return redirect('/') """
