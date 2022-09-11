@@ -46,7 +46,7 @@ def login(request):
         usuario = auth.authenticate(username=username, password=senha)
 
         if not usuario:
-            messages.add_message(request, constants.ERRO, 'username')
+            """ messages.add_message(request, constants.ERROR, 'username') """
             return redirect ('/login')
         else:
             auth.login(request, usuario)
