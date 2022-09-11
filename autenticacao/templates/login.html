@@ -11,6 +11,15 @@
 
 {% block 'body' %}
 <body id="login-home">
+    <div class="box">
+        {% if messages %}
+            <br>
+            {% for message in messages %}
+                <div class = "alert {{message.tags}}">
+                    {{message}}
+                </div>
+            {% endfor %}
+        {% endif %}
     <form action=" {% url 'login' %} " method="POST"> 
         {% csrf_token %}
         <fieldset>
