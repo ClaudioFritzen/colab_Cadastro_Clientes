@@ -56,3 +56,8 @@ def login(request):
             auth.login(request, usuario)
             return HttpResponse('Login bem sucedido!')
             """ return redirect('/') """
+
+# 
+def sair(request):
+    auth.logout(request)
+    return redirect('/login')
