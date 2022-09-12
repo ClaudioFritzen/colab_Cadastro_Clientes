@@ -144,3 +144,8 @@ MESSAGES_TAGS = {
     constants.WARNING: 'alert-warning'
 }
 
+# enviado o email para mandar o email de autenticacao
+
+#https://docs.djangoproject.com/en/4.1/topics/email/  documentação
+EMAIL_BACKEND = 'django.core.mail.backends.controle.EmailBackend'
+EMAIL_HOST_USER = 'sdfritzen96@gmail.com'
