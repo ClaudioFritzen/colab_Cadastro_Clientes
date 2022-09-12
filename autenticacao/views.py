@@ -13,6 +13,8 @@ def home(request):
 
 def cadastro(request):
     if request.method == "GET":
+        if request.user.is_authenticated:
+            return HttpResponse('Já está logado')
         return render(request, 'cadastro.html')
     elif request.method == "POST":
         usuario = request.POST.get('nome')
@@ -38,6 +40,8 @@ def cadastro(request):
 
 def login(request):
     if request.method =="GET":
+        if request.user.is_authenticated:
+            return HttpResponse('Já está logado')
         return render (request, 'login.html')
     elif request.method =="POST":
         username = request.POST.get('usuario')
