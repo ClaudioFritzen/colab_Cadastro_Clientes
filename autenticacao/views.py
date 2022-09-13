@@ -1,11 +1,15 @@
 from django.shortcuts import redirect, render
 from django. http import HttpResponse
-from .utils import password_is_valid
+from .utils import password_is_valid, send_email_html
 from django.contrib.auth.models import User
 
 from django.contrib.messages import constants
 from django.contrib import messages
 from django.contrib import auth
+
+# importando as configurações do settings para chamada do token de ativação
+import os
+from django.conf import settings
 
 # Create your views here.
 def home(request):
@@ -28,6 +32,11 @@ def cadastro(request):
         try:
             user = User.objects.create_user(username=usuario, password=senha, is_active=False)
             user.save()
+
+            # apos salvar enviar o email de usuario
+            path_template = os.path.join(settings.BASE_DIR,'autenticacao/templates/emails/cadastro_confirmado.html')
+            send_email_html(path_template, 'Cadastro Confirmado.' [email], username=usuario)
+
             messages.add_message(request, constants.SUCCESS, 'Usuário Cadastrado com sucesso' )
             return redirect('login/')
         except:
