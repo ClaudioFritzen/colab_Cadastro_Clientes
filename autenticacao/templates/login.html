@@ -10,18 +10,26 @@
 {% endblock 'titulo' %}
 
 {% block 'body' %}
-<div class="box">
-    {% if messages %}
-        <br>
-        {% for message in messages %}
-            <div class = "alert {{message.tags}}">
-                {{message}}
-            </div>
-        {% endfor %}
-    {% endif %}
+
+<section class="mensagem">
+    <div class="box">
+        {% if messages %}
+            <br>
+            {% for message in messages %}
+                <div class = "alert {{message.tags}}">
+                    {{message}}
+                </div>
+            {% endfor %}
+        {% endif %}'
+    </div>
+</section>
+
+
 <body id="login-home">
-    <form action=" {% url 'login' %} " method="POST"> 
+    
+    <form action=" {% url 'login' %} " method="POST">
         {% csrf_token %}
+        
         <fieldset>
             <legend> Login do Usuário </legend>
             <div class="login-input">
@@ -41,6 +49,7 @@
 
         </fieldset>
     </form>
+   
 {% comment %} 
     <footer>
         <h4>Duanne Silva</h4>

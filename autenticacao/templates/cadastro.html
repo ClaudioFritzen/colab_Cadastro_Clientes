@@ -20,7 +20,7 @@
                 </div>
             {% endfor %}
         {% endif %}
-        <form action="{% url 'cadastro' %}" method="POST">
+        <form action="{% url 'cadastro' %}" method="POST"> 
             {% csrf_token %}
             <h1> Welcome! </h1>
             <fieldset>
