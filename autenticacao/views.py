@@ -29,10 +29,9 @@ def cadastro(request):
         try:
             user = User.objects.create_user(username=usuario, password=senha, is_active=False)
             user.save()
-
             # apos salvar enviar o email de usuario
-            path_template = os.path.join(settings.BASE_DIR,'autenticacao/templates/emails/cadastro_confirmado.html')
-            email_html(path_template, 'Cadastro confirmado', [email,], username=usuario) #link_ativacao=f"127.0.0.1:8000/auth/ativar_conta/{token}")
+            #path_template = os.path.join(settings.BASE_DIR, 'autenticacao/templates/emails/cadastro_confirmado.html')
+            #email_html(path_template, 'Cadastro confirmado', [email,], username=usuario) #link_ativacao=f"127.0.0.1:8000/auth/ativar_conta/{token}")
             messages.add_message(request, constants.SUCCESS, 'Usuário Cadastrado com sucesso' )
             return redirect('login/')
         except:
