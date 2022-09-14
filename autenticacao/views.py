@@ -37,7 +37,7 @@ def cadastro(request):
             return redirect('login/')
         except:
             messages.add_message(request, constants.ERROR, 'Erro interno do sistema' )
-            return HttpResponse('{{messages}}')
+            return redirect('/')
         
 
 
@@ -59,8 +59,7 @@ def login(request):
             return redirect('/login')
         else:
             auth.login(request, usuario)
-            return HttpResponse('Login bem sucedido!')
-            """ return redirect('/') """
+            return redirect('/pagefinal')
 
 # 
 def sair(request):

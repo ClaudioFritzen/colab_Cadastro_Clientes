@@ -29,16 +29,15 @@
     
     <form action=" {% url 'login' %} " method="POST">
         {% csrf_token %}
-        
         <fieldset>
             <legend> Login do Usuário </legend>
             <div class="login-input">
-                <input id="usuario" type="text" name="usuario" placeholder="Nome Completo">
+                <input id="usuario" type="text" name="usuario" placeholder="Usuario">
                 <label for="usuario">Usuário</label>
             </div>
 
             <div class="login-input">
-                <input for="senha" id="senha" name="senha" type="password" placeholder="*******">
+                <input for="senha" id="senha" name="senha" type="password" placeholder="Digite sua senha">
                 <label id="senha">Senha</label>
             </div>
 
@@ -50,27 +49,5 @@
         </fieldset>
     </form>
    
-{% comment %} 
-    <footer>
-        <h4>Duanne Silva</h4>
-        <section>
-            <div class="logo">
-                <p><a href="https://github.com/DuanneSilva"  ><img class="icon1" src="{% static 'autenticacao/img/logo-github.png' %}"
-                            alt="icone github" width=50px target:"_blank"></a></p>
-                <p><a href="https://www.linkedin.com/in/duanne-silva-94a3b158/"><img class="icon2"
-                            src="{% static 'autenticacao/img/linkedin.png' %}" alt="icone github" width=50px></a></p>
-            </div>
-        </section>
-        <h4>Claudio Fritzen</h4>
-        <section>
-            <div class="logo2">
-                <p><a href="https://github.com/ClaudioFritzen"><img class="icon3" src="{% static 'autenticacao/img/logo-github.png' %}"
-                            alt="icone github" width=50px></a></p>
-                <p><a href="https://www.linkedin.com/in/claudiofritzen/"><img class="icon4" src="{% static 'autenticacao/img/linkedin.png' %}"
-                            alt="icone github" width=50px></a></p>
-            </div>
-        </section>
-        </div>
-    </footer> {% endcomment %}
 {% endblock 'body' %}
 </body>

@@ -6,4 +6,5 @@ urlpatterns = [
     path('', views.cadastro, name="cadastro" ),
     path('login/', views.login, name="login"),
     path('sair/', views.sair, name="sair"), 
+    
 ]
