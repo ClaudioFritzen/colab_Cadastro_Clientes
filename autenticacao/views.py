@@ -59,7 +59,7 @@ def login(request):
             return redirect('/login')
         else:
             auth.login(request, usuario)
-            return redirect('/pagefinal')
+            return redirect('/pagefinal.html')
 
 # 
 def sair(request):
