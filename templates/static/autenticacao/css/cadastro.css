@@ -67,3 +67,15 @@ legend {
     background-image: linear-gradient(to right, rgb(175, 163, 163), rgb(104, 95, 95));
 }
 
+.enter {
+    background-image: linear-gradient(to left, rgb(175, 163, 163), rgb(187, 110, 110));
+    width: 100%;
+    border: none;
+    padding: 2vh;
+    color: rgb(247, 244, 239);
+    font-size: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+
+}
+

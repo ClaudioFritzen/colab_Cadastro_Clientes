@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block 'head' %}
+    <link rel="stylesheet" type="text/css" href="{% static 'autenticacao/css/style.css' %}">
+{% endblock 'head' %}
+
+{% block 'titulo' %} 
+    Tela | Login 
+{% endblock 'titulo' %}
+
+{% block 'body' %}
+
+    <div class="box">
+        {% if messages %}
+            <br>
+            {% for message in messages %}
+                <div class = "alert {{message.tags}}">
+                    {{message}}
+                </div>
+            {% endfor %}
+        {% endif %}
+    </div>
+  
+
+
+
+<body id="login-home">
+    
+    <form action=" {% url 'login' %} " method="POST"> {% csrf_token %}
+        
+        <fieldset>
+            <legend> Login do Usuário </legend>
+            <div class="login-input">
+                <input id="usuario" type="text" name="usuario" placeholder="Usuario">
+                <label for="usuario">Usuário</label>
+            </div>
+
+            <div class="login-input">
+                <input for="senha" id="senha" name="senha" type="password" placeholder="Digite sua senha">
+                <label id="senha">Senha</label>
+            </div>
+
+            <a href="#"><button class="enter">Login</button></a>
+            <p>Ainda não tem uma conta?</p>
+            <button><a class="forgot" href="/">Registrar</a></button>
+
+        </fieldset>
+    </form>
+   
+{% endblock 'body' %}
+</body>

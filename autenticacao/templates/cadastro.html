@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
-
 {% load static %}
+
 {% block 'head' %}
     <link rel="stylesheet" href="{% static 'autenticacao/css/cadastro.css' %}">
 {% endblock 'head' %} 
@@ -10,7 +10,7 @@
 {% endblock 'titulo' %}
 
 {% block 'body' %}
-<body>
+
     <div class="box">
         {% if messages %}
             <br>
@@ -20,8 +20,8 @@
                 </div>
             {% endfor %}
         {% endif %}
-        <form action="{% url 'cadastro' %}" method="POST"> 
-            {% csrf_token %}
+        <form action="{% url 'cadastro' %}" method="POST"> {% csrf_token %}
+            
             <h1> Welcome! </h1>
             <fieldset>
                 
@@ -52,14 +52,13 @@
               
                 <br>
                 
-                <input type="submit" value="Enviar" id="submit">
-
+                <a href="#"><button class="enter">Criar conta</button><a>
                 <p>Já tem uma conta?</p>
-            <button><a class="forgot" href="/login">Login</a></button>
+            <button><a class="enter" href="/login">Login</a></button>
                 
             </fieldset>
         </form>
-</body>       
+       
         {% block 'footer' %}
 
          {% endblock 'footer' %}
