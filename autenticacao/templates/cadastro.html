@@ -10,8 +10,7 @@
 {% endblock 'titulo' %}
 
 {% block 'body' %}
-
-    <div class="box">
+    <div class="mensagens">
         {% if messages %}
             <br>
             {% for message in messages %}
@@ -20,44 +19,53 @@
                 </div>
             {% endfor %}
         {% endif %}
-        <form action="{% url 'cadastro' %}" method="POST"> {% csrf_token %}
-            
-            <h1> Welcome! </h1>
-            <fieldset class="fieldsetd">
-                
-                <legend><b>Cadastro de usuario</b></legend>
-                <br>
-                <div class="inputbox">
-                    <input type="text" name="nome" id="nome" class="userInput" required>
-                    <label for="nome">Nome</label>
-                </div>
-                <br>
-                <div class="inputbox">
-                    <input type="text" name="email" id="email" class="userInput" required>
-                    <label for="email">Email</label>
-                    <br>
-                </div>
-                <br>
-                <div class="pass">
-                    <label for="senha"> Crie sua senha</label>
-                    <input id="senha" type="password" name="senha" placeholder="Digite sua senha" />
-                </div>
-                
-                <br>
-                <div class="pass">
-                    <label for="password">Confirme sua senha</label>
-                    <input type="password" id="password" name="password" size="20" required>
-
-                </div>
-              
-                <br>
-                
-                <a href="#"><button class="enter">Criar conta</button><a>
-                <p>Já tem uma conta?</p>
-            <button><a class="enter" href="/login">Login</a></button>
-                
-            </fieldset>
+    </div>
+    <div class="box">
+        <div class="header">    
+            <h1>Crie sua conta</h1>
+            <div class="login-card-social-btns">
+                <a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-facebook"
+                        width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                        <path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3"></path>
+                    </svg>
+                </a>
+                <a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-google" width="24"
+                        height="24" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                        <path d="M17.788 5.108a9 9 0 1 0 3.212 6.892h-8"></path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+        <form class="newUser" action="#" method="POST">
+            <div class="form-item">
+                <span class="form-item-icon material-symbols-rounded">person</span>
+                <input type="text" placeholder="Usuario" id="usuarioForm">
+            </div>
+            <div class="form-item">
+                <span class="form-item-icon material-symbols-rounded">mail</span>
+                <input type="text" placeholder="Seu Email" id="emailForm">
+            </div>
+            <div class="form-item">
+                <span class="form-item-icon material-symbols-rounded">lock</span>
+                <input type="password" placeholder="Crie uma senha" id="passwordForm">
+            </div>
+            <div class="form-item">
+                <span class="form-item-icon material-symbols-rounded">lock</span>
+                <input type="password" placeholder="Confirme sua senha" id="passwordForm">
+            </div>
+            <button type="submit" class="">Criar conta</button>
+            <div class="login-card-footer">
+                Possui uma conta? <a href="#">Faça Login.</a>
+            </div>
         </form>
+        
+        
        
         {% block 'footer' %}
 

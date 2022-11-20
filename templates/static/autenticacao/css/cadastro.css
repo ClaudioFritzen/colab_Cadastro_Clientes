@@ -1,43 +1,122 @@
 /*---formulario---*/
-body {
-    font-family: 'Work Sans', sans-serif;
-    background-image: linear-gradient(to right, rgb(175, 163, 163), rgb(187, 110, 110));
-    font-size: 20px;
 
-}
 
 .box {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: rgb(85, 75, 88);
+    background-color: rgb(187, 174, 174);
     text-align: center;
-    padding: 20px;
+    padding: 4rem;
     border-radius: 20px;
-    width: 30%;
+    width: 450px;
     height: auto;
-    box-shadow: 20px 20px 30px rgb(36, 34, 34);
-    color: rgb(243, 233, 211);
+    box-shadow: 20px 20px 30px rgb(56, 50, 50);
+    color: rgb(8, 8, 8);
 }
 
-fieldset {
-    border: 5px double rgb(180, 167, 167);
-    border-radius: 10px;
+.header {
+    margin-bottom: 2rem;
 }
-.fieldsetd{
-    width: 450px;
-    background: rgba(225, 255, 225, .5);
-    padding: 4rem;
-    border-radius: 10px;
+
+.newUser{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.newUser .form-item {
     position: relative;
 }
+
+.newUser .form-item .form-item-icon{
+    position: absolute;
+    top: 0.9rem;
+    left: 1.3rem;
+    font-size: 1.3rem;
+    opacity: .4;
+}
+
+.box input[type="text"],
+.box input[type="password"],
+.box input[type="email"] {
+    border: none;
+    outline: none;
+    background: rgba(225,255,255, .3);
+    padding: 1rem 1.5rem;
+    padding-left: calc(1rem * 3.5);
+    border-radius: 100px;
+    width: 70%;
+    transition: background .5s;
+}
+
+.box input:focus {
+    background: white;
+}
+
+.newUser button {
+    background: black;
+    color: white;
+    padding: 1rem;
+    border-radius: 100px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: background .5s;
+}
+
+.newUser-footer {
+    text-align: center;
+}
+.newUser a {
+    text-decoration: none;
+    color: #35339a;
+}
+
+.newUser button:hover{
+    background-color: rgba(0, 0, 0, .85);
+    cursor: pointer;
+}
+
+
+.newUser a:hover {
+    text-decoration: underline;
+}
+
+.login-card-social-btns {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.login-card-social-btns a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, .6);
+    border-radius: 100px;
+    transition: all .5s;
+}
+
+.login-card-social-btns a:hover{
+    background: white;
+    transform: scale(1.1);
+}
+
 
 legend {
     border: 5px double rgb(233, 188, 188);
     padding: 10px;
     background-color: rgb(184, 164, 194);
     border-radius: 5px;
+}
+
+.txtcadastro{
+    font-size: 1rem;
 }
 
 /*Dados pessoais*/
@@ -91,7 +170,7 @@ legend {
         padding: 2rem 0;
     }
 
-    .fieldsetd {
+    .box {
         width: 300px;
         padding: 2rem;
     }
