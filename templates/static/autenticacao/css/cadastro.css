@@ -25,6 +25,13 @@ fieldset {
     border: 5px double rgb(180, 167, 167);
     border-radius: 10px;
 }
+.fieldsetd{
+    width: 450px;
+    background: rgba(225, 255, 225, .5);
+    padding: 4rem;
+    border-radius: 10px;
+    position: relative;
+}
 
 legend {
     border: 5px double rgb(233, 188, 188);
@@ -79,3 +86,17 @@ legend {
 
 }
 
+@media (max-width: 768px) {
+    body {
+        padding: 2rem 0;
+    }
+
+    .fieldsetd {
+        width: 300px;
+        padding: 2rem;
+    }
+    .h1{
+        width: 300px;
+        padding: 2rem;
+    }
+}

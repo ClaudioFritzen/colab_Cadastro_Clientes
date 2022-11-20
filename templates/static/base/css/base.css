@@ -1,100 +1,54 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
 body {
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
     background: linear-gradient(to right, #333399, #ff00cc);
-}
-
-#login-home {
-    font-family: 'Work Sans', sans-serif;
-    background-image: linear-gradient(to right, rgb(175, 163, 163), rgb(187, 110, 110));
-    font-size: 20px;
-}
-
-form {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: rgb(85, 75, 88);
-    text-align: center;
-    padding: 20px;
-    border-radius: 20px;
-    box-shadow: 20px 20px 30px rgb(36, 34, 34);
-    color: rgb(243, 233, 211);
-}
-
-fieldset {
-    border: 5px double rgb(180, 167, 167);
-    border-radius: 10px;
-}
-
-legend {
-    border: 5px double rgb(233, 188, 188);
-    padding: 10px;
-    background-color: rgb(184, 164, 194);
-    border-radius: 5px;
-}
-
-.login-input {
-    position: relative;
-    text-align: left;
-    right: 5%;
-    border-radius: 5px;
-    width: 100%;
-    letter-spacing: 1px;
-    margin: 30px;
-}
-
-.enter {
-    background-image: linear-gradient(to left, rgb(175, 163, 163), rgb(187, 110, 110));
-    width: 100%;
-    border: none;
-    padding: 2vh;
-    color: rgb(247, 244, 239);
-    font-size: 15px;
-    border-radius: 10px;
-    cursor: pointer;
-
-}
-
-.forgot {
-    border-radius: 10px;
-    text-decoration: none;
-}
-
-footer {
     display: flex;
-    justify-content: center;
     align-items: center;
-    place-content:center;
-    margin: 50px;
+    justify-content: center;
 }
 
-.logo,
-.logo2 {
+.login-card-social-btns {
     display: flex;
-    justify-content: center;
     align-items: center;
-
-    margin: 10px;
-    padding: 10px;
+    justify-content: center;
+    gap: 1rem;
 }
 
-.icon1,
-.icon2,
-.icon3,
-.icon4 {
-    padding: 10px;
+.login-card-social-btns a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, .6);
+    border-radius: 100px;
+    transition: all .5s;
 }
-.box {
-    position: absolute;
-    top: 10%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: rgb(85, 75, 88);
-    text-align: center;
-    padding: 20px;
-    border-radius: 20px;
-    width: 30%;
-    height: auto;
-    box-shadow: 20px 20px 30px rgb(36, 34, 34);
-    color: rgb(243, 233, 211);
+
+.login-card-social-btns a:hover{
+    background: white;
+    transform: scale(1.1);
+}
+
+
+
+
+@media (max-width: 768px) {
+    body {
+        padding: 2rem 0;
+    }
+
+    .fieldsetd {
+        width: 300px;
+        padding: 2rem;
+    }
+    .h1{
+        width: 300px;
+        padding: 2rem;
+    }
 }
