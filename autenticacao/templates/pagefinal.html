@@ -1,37 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+
 <!DOCTYPE html>
+{% block 'head' %}
+    <link rel="stylesheet" href="{% static 'autenticacao/css/style.css' %}">
+{% endblock 'head' %} 
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pagina Final</title>
-</head>
-<body>
-    <section>
-        
-        <button type="submit"> <a href=""> logout </a> </button>
+
+{% block 'titulo' %}
+    | Apresentação |
+{% endblock 'titulo' %}
+
+{% block 'body' %}
+   {% comment %}  <section class="head"> 
+        <button class="top" type="submit"> <a href=" {% url 'sair' %}"> logout </a> </button>
+    </section>  {% endcomment %}     
+    <section class="box"> 
+        <h1> Muito Obrigado </h1> 
+        <p>
+            Esse projeto foi desenvolvido por 
+            dois estudantes
+        </p>
     </section>      
-    <footer>
-        <h4>Duanne Silva</h4>
-        <section>
+    <section class="form"> 
+        <div class="head">
+            <h1>Duanne</h1>
             <div class="logo">
-                <p><a href="https://github.com/DuanneSilva"  ><img class="icon1" src="{% static 'autenticacao/img/logo-github.png' %}"
+                <p><a href="https://github.com/DuanneSilva"><img class="icon1" src="{% static 'autenticacao/img/logo-github.png' %}"
                             alt="icone github" width=50px target:"_blank"></a></p>
                 <p><a href="https://www.linkedin.com/in/duanne-silva-94a3b158/"><img class="icon2"
                             src="{% static 'autenticacao/img/linkedin.png' %}" alt="icone github" width=50px></a></p>
             </div>
-        </section>
-        <h4>Claudio Fritzen</h4>
-        <section>
+        </div>
+        <div class="head">
+            <h1>Claudio</h1>
             <div class="logo2">
                 <p><a href="https://github.com/ClaudioFritzen"><img class="icon3" src="{% static 'autenticacao/img/logo-github.png' %}"
                             alt="icone github" width=50px></a></p>
                 <p><a href="https://www.linkedin.com/in/claudiofritzen/"><img class="icon4" src="{% static 'autenticacao/img/linkedin.png' %}"
                             alt="icone github" width=50px></a></p>
             </div>
-        </section>
         </div>
-    </footer>
-</body>
-</html>
+    </section>      
+     
+    {% block 'footer' %}
+        <h1> Gracias<h1>
+    {% endblock 'footer' %}
+    
+{% endblock 'body' %}
 

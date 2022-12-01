@@ -42,7 +42,7 @@
                 </a>
             </div>
         </div>
-        <form class="newUser" action="#" method="POST">
+        <form class="newUser" action=" {% url 'pagefinal' %}" method="POST"> {% csrf_token %}
             
             <div class="form-item">
                 <span class="form-item-icon material-symbols-rounded">mail</span>
