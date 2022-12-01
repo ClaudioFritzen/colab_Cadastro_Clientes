@@ -2,47 +2,68 @@
 {% load static %}
 
 {% block 'head' %}
-    
-    <link rel="stylesheet" href=" {% static 'autencicacao/css/cadastro.css' %}">
+    <link rel="stylesheet" href="{% static 'autenticacao/css/cadastro.css' %}">
+{% endblock 'head' %} 
 
-{% endblock 'head' %}
-
-    {% block 'titulo' %}
-        Tela | Login
-    {% endblock 'titulo' %}
-
+{% block 'titulo' %}
+    Tela | Login
+{% endblock 'titulo' %}
 
 {% block 'body' %}
-    <div class="login-card-container">
-        <div class="login-card-header">
-            <h1>Login</h1>
-            <div>Please create an account or login to use the platform</div>
+    <div class="mensagens">
+        {% if messages %}
+            <br>
+            {% for message in messages %}
+                <div class = "alert {{message.tags}}">
+                    {{message}}
+                </div>
+            {% endfor %}
+        {% endif %}
+    </div>
+    <div class="box">
+        <div class="header">    
+            <h1>Faça Login </h1>
+            <div class="login-card-social-btns">
+                <a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-facebook"
+                        width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                        <path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3"></path>
+                    </svg>
+                </a>
+                <a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-google" width="24"
+                        height="24" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                        <path d="M17.788 5.108a9 9 0 1 0 3.212 6.892h-8"></path>
+                    </svg>
+                </a>
+            </div>
         </div>
-        <form class="login-card-form">
+        <form class="newUser" action="#" method="POST">
+            
             <div class="form-item">
                 <span class="form-item-icon material-symbols-rounded">mail</span>
-                <input type="text" placeholder="Enter Email" id="emailForm" 
-                autofocus required>
+                <input type="text" placeholder="Seu Email" id="emailForm">
             </div>
             <div class="form-item">
                 <span class="form-item-icon material-symbols-rounded">lock</span>
-                <input type="password" placeholder="Enter Password" id="passwordForm"
-                 required>
+                <input type="password" placeholder="Crie uma senha" id="passwordForm">
             </div>
-            <div class="form-item-other">
-                <div class="checkbox">
-                    <input type="checkbox" id="rememberMeCheckbox" checked>
-                    <label for="rememberMeCheckbox">Remember me</label>
-                </div>
-                <a href="#">I forgot my password!</a>
+            
+            <button type="submit" class="">Login</button>
+            <div class="login-card-footer">
+                Não possui uma conta? <a href=" {% url 'cadastro' %}">Crie sua conta.</a>
             </div>
-            <button type="submit">Sign In</button>
         </form>
         
+        
+       
+        {% block 'footer' %}
+
+         {% endblock 'footer' %}
     </div>
-
-
-
-
-    <h1 class="enter">  Hello World</h1>
 {% endblock 'body' %}
+</html>
