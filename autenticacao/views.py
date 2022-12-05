@@ -70,6 +70,10 @@ def pagefinal(request):
 
 
 def recuperar_senha(request):
+    if request.method == "GET":
+        email = User.objects.filter(email=email)
+        return HttpResponse("Email enviado, check sua caixa de entrada!")
+   
     return render(request, 'recuperar_senha.html')
     # pedir email do usuario
     # chegar se existe esse email no banco
