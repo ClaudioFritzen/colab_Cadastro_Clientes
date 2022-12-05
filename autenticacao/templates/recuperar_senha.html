@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block 'head' %}
+    <link rel="stylesheet" href="{% static 'autenticacao/css/cadastro.css' %}">
+{% endblock 'head' %}
+
+{% block 'titulo' %}
+    Tela | Recuperar senha
+{% endblock 'titulo' %}
+
+{% block 'body' %}
+    <div class="mensagens">
+        {% if messages %}
+            <br>
+            {% for message in messages %}
+                <div class="alert {{message.tags}}">
+                    {{message}}
+                </div>
+            {% endfor %}
+        {% endif %}
+    </div>
+    <div class="box">
+        <p> Digite seu email e enviaremos um email para redifinir sua senha</p>
+        <input type="text" placeholder="Seu Email" id="emailForm">
+        <button type="submit" class="">Enviar</button>
+    </div>
+    
+{% endblock 'body' %}
+

@@ -67,3 +67,10 @@ def sair(request):
 
 def pagefinal(request):
     return render(request, 'pagefinal.html')
+
+
+def recuperar_senha(request):
+    return render(request, 'recuperar_senha.html')
+    # pedir email do usuario
+    # chegar se existe esse email no banco
+    # fazer as validações
