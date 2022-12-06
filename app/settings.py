@@ -148,4 +148,11 @@ MESSAGES_TAGS = {
 
 #https://docs.djangoproject.com/en/4.1/topics/email/  documentação
 EMAIL_BACKEND = 'django.core.mail.backends.controle.EmailBackend'
-EMAIL_HOST_USER = 'sdfritzen96@gmail.com'
+#EMAIL_HOST_USER = 'sdfritzen96@gmail.com'
+EMAIL_HOST = 'localhost'
+EMAIL_PORT = 1025
+EMAIL_HOST_USER = 'testsite_app'
+EMAIL_HOST_PASSWORD = "Cfrg!7239"
+EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = "Teste de emai <noreply@example.com>"
+
