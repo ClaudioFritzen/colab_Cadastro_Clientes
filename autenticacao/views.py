@@ -38,8 +38,6 @@ def cadastro(request):
             messages.add_message(request, constants.ERROR, 'Erro interno do sistema' )
             return redirect('/')
         
-
-
 # Autencicacao de usuario do login
 
 def login(request):
@@ -70,11 +68,21 @@ def pagefinal(request):
 
 
 def recuperar_senha(request):
+    
     if request.method == "GET":
-        email = User.objects.filter(email=email)
-        return HttpResponse("Email enviado, check sua caixa de entrada!")
-   
-    return render(request, 'recuperar_senha.html')
-    # pedir email do usuario
-    # chegar se existe esse email no banco
-    # fazer as validações
+        return render(request, 'recuperar_senha.html')
+       
+        #return HttpResponse("Email não enviado!!")
+    elif request.method == "POST":
+        email1 = request.POST.get('email')
+        print(f'f {email1}')
+
+        email=User.objects.filter(email=email1)
+        print(f"email do filtro {email1}")
+        if email == email1:
+            print(f'{email1} {email}  --email encontrado no banco de dados')
+            messages.add_message(request, constants.SUCCESS, "Email enviado!")
+            return render(request, 'recuperar_senha.html')
+        else:
+            messages.add_message(request, constants.ERROR, "Email não cadastrado" )
+            return render(request, 'recuperar_senha.html')

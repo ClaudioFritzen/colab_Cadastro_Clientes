@@ -10,20 +10,23 @@
 {% endblock 'titulo' %}
 
 {% block 'body' %}
-    <div class="mensagens">
-        {% if messages %}
-            <br>
-            {% for message in messages %}
-                <div class="alert {{message.tags}}">
-                    {{message}}
-                </div>
-            {% endfor %}
-        {% endif %}
-    </div>
     <div class="box">
-        <p> Digite seu email e enviaremos um email para redifinir sua senha</p>
-        <input type="text" placeholder="Seu Email" id="emailForm">
-        <button type="submit" class="">Enviar</button>
+        <div class="mensagens">
+            {% if messages %}
+                <br>
+                {% for message in messages %}
+                    <div class="alert {{message.tags}}">
+                        {{message}}
+                    </div>
+                {% endfor %}
+            {% endif %}
+        </div>
+    
+        <form action="{% url 'recuperar_senha' %}" method="POST"> {% csrf_token %}
+            <p> Digite seu email e enviaremos um email para redifinir sua senha</p>
+            <input type="text" placeholder="Seu Email" id="emailForm" name="email">
+            <button type="submit" class="">Enviar</button>
+        </form>
     </div>
     
 {% endblock 'body' %}
