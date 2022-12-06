@@ -11,6 +11,7 @@ from django.contrib import auth
 import os
 from django.conf import settings
 
+
 # Create your views here.
 def cadastro(request):
     if request.method == "GET":
@@ -70,6 +71,8 @@ def pagefinal(request):
 def recuperar_senha(request):
     
     if request.method == "GET":
+        recuperar_senha = User.objects.all()
+        print(recuperar_senha)
         return render(request, 'recuperar_senha.html')
        
         #return HttpResponse("Email não enviado!!")
@@ -77,10 +80,11 @@ def recuperar_senha(request):
         email1 = request.POST.get('email')
         print(f'f {email1}')
 
-        email=User.objects.filter(email=email1)
-        print(f"email do filtro {email1}")
-        if email == email1:
-            print(f'{email1} {email}  --email encontrado no banco de dados')
+        email=User.objects.filter(email=email1[0])
+        print(f"email do post  {email1}")
+        print(f'print do filtro {email}')
+        if email == email:
+            print(f' {email}  --email encontrado no banco de dados')
             messages.add_message(request, constants.SUCCESS, "Email enviado!")
             return render(request, 'recuperar_senha.html')
         else:
